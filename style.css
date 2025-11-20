@@ -1,0 +1,258 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* 主容器 - 侧边栏和地图并排 */
+#container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 侧边栏样式 */
+#sidebar {
+    width: 320px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+/* 地铁站标题样式 - 增强对比度 */
+#sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    text-align: center;
+    border-bottom: 3px solid #FFD700; /* 改为金色边框 */
+    padding-bottom: 12px;
+    color: #FFFFFF; /* 纯白色 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 添加文字阴影 */
+    font-weight: bold;
+    background: rgba(0,0,0,0.2); /* 添加深色背景增强对比 */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#sidebar p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* 搜索框样式 */
+#search-box {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.search-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2980b9;
+    background: white;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.search-input::placeholder {
+    color: #7f8c8d;
+}
+
+.search-button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #2980b9, #2573a7);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+/* 站点信息区域 - 增强对比度 */
+#station-info {
+    background: rgba(0,0,0,0.3); /* 加深背景色增强对比 */
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2); /* 添加边框 */
+}
+
+#station-info h3 {
+    color: #4FC3F7;
+    margin-bottom: 12px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+#hospital-count {
+    font-size: 1.8em; /* 增大字体 */
+    font-weight: bold;
+    color: #76FF03; /* 改为更亮的绿色 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* 医院列表样式 - 使用白色背景 */
+#hospital-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.9); /* 改为白色背景 */
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+#hospital-list li {
+    padding: 12px 15px;
+    border-bottom: 2px solid rgba(0,0,0,0.1); /* 改为深色边框 */
+    transition: all 0.3s ease;
+    background: #FFFFFF; /* 纯白色背景 */
+    border-radius: 6px;
+    margin-bottom: 8px;
+    color: #333333; /* 深色文字 */
+}
+
+#hospital-list li:hover {
+    background: #F8F9FA; /* 悬停时稍浅的白色 */
+    transform: translateX(8px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+#hospital-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* 医院名称样式 - 调整为深色 */
+.hospital-name {
+    font-weight: bold;
+    color: #2C3E50; /* 深蓝色 */
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* 医院等级样式 */
+.hospital-level {
+    color: #E74C3C; /* 红色 */
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+}
+
+/* 医院地址样式 */
+.hospital-address {
+    color: #666666; /* 中灰色 */
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+/* 医院距离样式 */
+.hospital-distance {
+    color: #27AE60; /* 绿色 */
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 3px 8px;
+    background: rgba(39, 174, 96, 0.1);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 地图容器 */
+#map {
+    flex: 1;
+    height: 100%;
+}
+
+/* 自定义信息窗口样式 */
+.amap-info-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* 响应式设计 - 在小屏幕上堆叠显示 */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: 40%;
+    }
+
+    #map {
+        height: 60%;
+    }
+
+    /* 移动端调整字体大小 */
+    #sidebar h2 {
+        font-size: 1.4em;
+    }
+
+    .hospital-distance {
+        font-size: 1.1em;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.6);
+}

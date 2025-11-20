@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京地铁站5公里医疗圈可达性分析</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 注意：这里不再直接加载高德API，改由script.js动态加载 -->
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>北京地铁站医疗资源分析</h2>
+            <p>点击地图上的地铁站图标，或输入地铁站名称，查看其5公里范围内的医院分布。</p>
+
+            <!-- 搜索框 - 添加在这里 -->
+            <div id="search-box">
+                <div class="search-container">
+                    <input type="text" id="station-search" placeholder="输入地铁站名称..." class="search-input">
+                    <button id="search-button" class="search-button">搜索</button>
+                </div>
+            </div>
+
+            <div id="station-info">
+                <h3 id="station-name">请点击地图上的地铁站</h3>
+                <p id="station-lines"></p>
+                <p>5公里内医院数量：<span id="hospital-count">0</span></p>
+                <ul id="hospital-list"></ul>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
